@@ -1,107 +1,103 @@
-# Conta Bancária
-
 <br />
 
 <div align="center">
-	<img src="https://i.imgur.com/IaD4lwg.png" title="source: imgur.com" width="35%"/>
+<img src="https://i.imgur.com/IaD4lwg.png" alt="Logo da Generation Brasil" width="35%"/>
+</div>
+<br />
+
+<div align="center">
+<img src="https://img.shields.io/github/languages/top/MyListon/conta_bancaria?style=flat-square" alt="Linguagem Top"/>
+<img src="https://img.shields.io/github/repo-size/MyListon/conta_bancaria?style=flat-square" alt="Tamanho do Repositório"/>
+<img src="https://img.shields.io/github/languages/count/MyListon/conta_bancaria?style=flat-square" alt="Contagem de Linguagens"/>
+<img src="https://img.shields.io/github/last-commit/[SEU_USUARIO_GITHUB]/[SEU_REPOSITORIO]?style=flat-square" alt="Último Commit"/>
+<img src="https://img.shields.io/github/issues/[SEU_USUARIO_GITHUB]/[SEU_REPOSITORIO]?style=flat-square" alt="Issues Abertas"/>
+<img src="https://img.shields.io/github/issues-pr/[SEU_USUARIO_GITHUB]/[SEU_REPOSITORIO]?style=flat-square" alt="Pull Requests Abertos"/>
 </div>
 
 <br />
 
+1. Sobre o Repositório
+<br />
 
-<div align="center">
-  <img src="https://img.shields.io/github/languages/top/rafaelq80/aulas_java_t82?style=flat-square" />
-  <img src="https://img.shields.io/github/repo-size/rafaelq80/aulas_java_t82?style=flat-square" />
-  <img src="https://img.shields.io/github/languages/count/rafaelq80/aulas_java_t82?style=flat-square" />
-  <img src="https://img.shields.io/github/last-commit/rafaelq80/aulas_java_t82?style=flat-square" />
-  <img src="https://img.shields.io/github/issues/rafaelq80/aulas_java_t82?style=flat-square" />
-  <img src="https://img.shields.io/github/issues-pr/rafaelq80/aulas_java_t82?style=flat-square" />
-</div>
+Este repositório contém um Sistema de Conta Bancária, um projeto prático desenvolvido como parte dos exercícios do Bootcamp Java da Generation Brasil.
 
-
-------
+O objetivo principal deste projeto é aplicar os conceitos de Programação Orientada a Objetos (POO). Ele demonstra o uso de classes, herança e polimorfismo para criar um sistema de menu interativo e robusto, com foco em simular operações bancárias. O código é organizado em diferentes pacotes para garantir clareza e manutenibilidade.
 
 <br />
 
-## 1. Sobre o Repositório
+2. Conteúdo Programático
+<br />
+
+Este projeto aborda a aplicação de vários tópicos do Bootcamp:
+
+Estruturas Condicionais (if/else, switch): Usadas para controlar o fluxo do menu e validar operações.
+
+Laços de Repetição (do-while, while): Garantem que o menu continue exibindo opções até que o usuário decida sair.
+
+Programação Orientada a Objetos (POO):
+
+Classes e Objetos: Conta, ContaCorrente, ContaPoupanca e Menu.
+
+Herança: ContaCorrente e ContaPoupanca herdam da classe Conta.
+
+Polimorfismo: Métodos como sacar() e visualizar() são sobrescritos nas classes filhas para comportamentos específicos.
+
+Coleções (ArrayList): A classe de controle gerencia uma lista de objetos Conta.
+
+Métodos: Organização das funcionalidades em métodos dentro das classes.
 
 <br />
 
-Este repositório reúne os **exercícios práticos desenvolvidos durante o Bootcamp Java ** da [Generation Brasil](https://brazil.generation.org/).
+3. Requisitos
+Para compilar e executar o código localmente, você precisa ter instalado:
 
-Você encontrará conteúdos que abrangem desde os fundamentos da linguagem Java até conceitos como estruturas condicionais, laços de repetição, arrays, collections e métodos. Os exemplos são baseados nas aulas ao vivo (*Live Codes*) e exercícios com foco em cenários reais, para fixar o conteúdo de forma prática.
+Java JDK 17+
 
-<br />
-
-## 2. Conteúdo Programático
-
-<br />
-
-| Aula    | Tema                   | Acesso                                                       | Descrição                                             |
-| ------- | ---------------------- | ------------------------------------------------------------ | ----------------------------------------------------- |
-| Aula 01 | Introdução ao Java     | [Abrir](https://github.com/rafaelq80/aulas_java_t82/tree/main/helloworld) | Primeiros passos, estrutura básica e saída de dados   |
-| Aula 02 | Variáveis e Operadores | [Abrir](https://github.com/rafaelq80/aulas_java_t82/tree/main/aula_02) | Variáveis, constantes, `Scanner`, operadores diversos |
-| Aula 03 | Condicionais e Lógicos | [Abrir](https://github.com/rafaelq80/aulas_java_t82/tree/main/aula_03) | `if/else`, `switch`, operadores relacionais e lógicos |
-| Aula 04 | Laços de Repetição     | [Abrir](https://github.com/rafaelq80/aulas_java_t82/tree/main/aula_04) | Estruturas `for`, `while` e `do-while`                |
-| Aula 05 | Arrays                 | [Abrir](https://github.com/rafaelq80/aulas_java_t82/tree/main/aula_05) | Vetores e matrizes                                    |
-| Aula 06 | Collections (Parte 1)  | [Abrir](https://github.com/rafaelq80/aulas_java_t82/tree/main/aula_06) | Trabalhando com `ArrayList` e `Set`                   |
-| Aula 07 | Collections (Parte 2)  | [Abrir](https://github.com/rafaelq80/aulas_java_t82/tree/main/aula_07) | Uso de `Queue` e `Stack`                              |
-| Aula 08 | Métodos                | [Abrir](https://github.com/rafaelq80/aulas_java_t82/tree/main/aula_08) | Criação de métodos com e sem retorno                  |
+Uma IDE como Eclipse ou STS
 
 <br />
 
-## 3. Requisitos
+4. Como Executar o Projeto
+<br />
 
-Para executar os códigos localmente, você precisará de:
+4.1. Importando o Projeto na IDE
+Clone o repositório em sua máquina:
 
-- [Java JDK 17+](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
-- [Eclipse](https://eclipseide.org/) ou [STS](https://spring.io/tools)
+Bash
+
+git clone https://github.com/MyListon/conta_bancaria.git
+Abra o Eclipse/STS e selecione a pasta do Workspace onde você clonou o projeto.
+
+No menu superior, vá em File 🡲 Import....
+
+Na janela de importação, selecione General 🡲 Existing Projects into Workspace e clique em Next.
+
+Em Select root directory, clique em Browse e selecione a pasta onde você clonou o repositório.
+
+O Eclipse/STS reconhecerá o projeto. Marque-o e clique em Finish.
 
 <br />
 
-## 4. Como Executar os projetos no Eclipse/STS
+4.2. Executando a Aplicação
+Na guia Package Explorer, localize o projeto e abra a classe principal: Menu.java
+
+Clique com o botão direito na classe e selecione Run As 🡲 Java Application.
+
+O console da sua IDE exibirá o menu interativo, permitindo que você interaja com o sistema.
 
 <br />
 
-### 4.1. Importando os Projetos
+Contribuições
+Este projeto faz parte de um curso educacional, mas contribuições são sempre bem-vindas! Se você tiver sugestões, correções ou melhorias, sinta-se à vontade para:
 
-1. Clone o repositório [Aulas Java](https://github.com/rafaelq80/aulas_java_t82) dentro da pasta do *Workspace* do Eclipse/STS
+Criar uma issue
 
-```bash
-git clone https://github.com/rafaelq80/aulas_java_t82.git
-```
+Enviar um pull request
 
-2. **Abra o Eclipse/STS** e selecione a pasta do *Workspace* onde você clonou o repositório
-3. No menu superior do Eclipse/STS, clique na opção: **File 🡲 Import...**
-4. Na janela **Import**, selecione a opção: **General 🡲 Existing Projects into Workspace** e clique no botão **Next**
-5. Na janela **Import Projects**, no item **Select root directory**, clique no botão **Browse...** e selecione a pasta do Workspace onde você clonou o repositório do projeto
-6. O Eclipse/STS reconhecerá automaticamente todos os projetos
-7. Marque todos os projetos, que você deseja importar, no item **Projects** e clique no botão **Finish** para concluir a importação
+Compartilhar com outros colegas que estão aprendendo Java!
 
 <br />
 
-### 4.2. Executando um projeto Java
-
-1. Na guia **Package Explorer**, localize o projeto
-2. Abra a Classe que você deseja executar
-3. Clique no botão **Run** <img src="https://i.imgur.com/MtBQjUp.png" title="source: imgur.com" width="3%"/> para executar a aplicação
-4. Caso seja perguntado qual é o tipo do projeto, selecione a opção **Java Application**
-5. O console exibirá a aplicação
-
-<br />
-
-## Contribuições
-
-Este repositório é parte de um projeto educacional, mas contribuições são sempre bem-vindas! Caso tenha sugestões, correções ou melhorias, fique à vontade para:
-
-- Criar uma **issue**
-- Enviar um **pull request**
-- Compartilhar com colegas que estejam aprendendo Java!
-
-<br />
-
-##  Contato
-
+Contato
 Desenvolvido por [**Myriam**](https://github.com/MyListon)
-Para dúvidas, sugestões ou colaborações, entre em contato via GitHub ou abra uma issue!
-
+Para dúvidas ou sugestões, entre em contato via GitHub ou abra uma issue.
