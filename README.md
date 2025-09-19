@@ -1,18 +1,9 @@
 <br />
 
 <div align="center">
-<img src="https://i.imgur.com/IaD4lwg.png" alt="Logo da Generation Brasil" width="35%"/>
+<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/81a22091-e1c2-4d4d-b022-cae26cc700f7" title="source: imgur.com" width="35%"/>
 </div>
 <br />
-
-<div align="center">
-<img src="https://img.shields.io/github/languages/top/MyListon/conta_bancaria?style=flat-square" alt="Linguagem Top"/>
-<img src="https://img.shields.io/github/repo-size/MyListon/conta_bancaria?style=flat-square" alt="Tamanho do Repositório"/>
-<img src="https://img.shields.io/github/languages/count/MyListon/conta_bancaria?style=flat-square" alt="Contagem de Linguagens"/>
-<img src="https://img.shields.io/github/last-commit/[SEU_USUARIO_GITHUB]/[SEU_REPOSITORIO]?style=flat-square" alt="Último Commit"/>
-<img src="https://img.shields.io/github/issues/[SEU_USUARIO_GITHUB]/[SEU_REPOSITORIO]?style=flat-square" alt="Issues Abertas"/>
-<img src="https://img.shields.io/github/issues-pr/[SEU_USUARIO_GITHUB]/[SEU_REPOSITORIO]?style=flat-square" alt="Pull Requests Abertos"/>
-</div>
 
 <br />
 
