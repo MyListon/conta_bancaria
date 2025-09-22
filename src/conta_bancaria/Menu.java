@@ -13,24 +13,30 @@ public class Menu {
         
         int opcao;
         
-        // Instanciar Objetos da Classe Conta
-        System.out.println(Cores.TEXT_WHITE + "Crianda a primeira Conta:");
-        Conta c1 = new Conta(1, 123, 1, "João da Silva", 1000.00f);
-        c1.visualizar();
-        
-        System.out.println("\nRealizando um Saque na Conta 1:");
-        c1.sacar(100.00f);
-        c1.visualizar();
-        
-        System.out.println("\nRealizando um Depósito na Conta 1:");
-        c1.depositar(500.00f);
-        c1.visualizar();
-        
-        System.out.println("\nCriando a segunda Conta:");
-        Conta c2 = new Conta(2, 123, 2, "Maria da Silva", 25000.00f);
-        c2.visualizar();
-        
-        
+     // Instanciar Objetos da Classe Conta
+		
+     		Conta c1 = new Conta(1, 123, 1, "Cintia Dourado", 500000.00f);
+     		
+     		Conta c2 = new Conta(2, 123, 2, "Priscila Lins", 500000.00f);
+     		
+     		System.out.println("O Saldo da conta é: " + c1.getSaldo());
+     		
+     		c1.setSaldo(600000.00f);
+     		
+     		System.out.println("O Saldo da conta é: " + c1.getSaldo());
+     		
+     		c1.visualizar();
+     		
+     		c2.visualizar();
+     		
+     		System.out.println(c1.sacar(1000));
+     		System.out.println("O Saldo da conta é: " + c1.getSaldo());
+     		
+     		System.out.println(c2.sacar(1000000));
+     		System.out.println("O Saldo da conta é: " + c2.getSaldo());
+     		
+     		c1.depositar(5000);
+     		System.out.println("O Saldo da conta é: " + c1.getSaldo());
 
         while (true) {
             System.out.println(Cores.TEXT_YELLOW_BRIGHT + Cores.BG_BLACK + "*****************************************************");
@@ -56,6 +62,7 @@ public class Menu {
 
             if (opcao == 9) {
                 System.out.println(Cores.TEXT_GREEN_BRIGHT + "\nBanco do Brasil com Z - O seu futuro começa aqui!");
+                sobre();
                 leia.close();
                 System.exit(0);
             }
@@ -91,4 +98,12 @@ public class Menu {
             }
         }
     }
+	public static void sobre() {
+		System.out.println("\n*********************************************************");
+		System.out.println("Projeto Desenvolvido por: ");
+		System.out.println("Generation Brasil - generation@generation.org");
+		System.out.println("github.com/conteudoGeneration");
+		System.out.println("*********************************************************");
+	}
+
 }
