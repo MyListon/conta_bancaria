@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import conta_bancaria.model.Conta;
 import conta_bancaria.model.ContaCorrente;
+import conta_bancaria.model.ContaPoupanca;
 import conta_bancaria.util.Cores;
 
 public class Menu {
@@ -57,6 +58,26 @@ public class Menu {
 		// Depositar Conta Corrente
 		cc1.depositar(5000.00f);
 		cc1.visualizar();
+		
+		// Intanciar Objetos da Classe ContaPoupanca
+		
+				System.out.println("\n\n*****************************************************");
+				System.out.println("  Testes da Classe Conta Poupança ");
+				System.out.println("*****************************************************");
+
+				// Criando um objeto de ContaPoupanca com o aniversário em 15
+				ContaPoupanca cp1 = new ContaPoupanca(4, 789, 2, "João da Silva", 50000.00f, 15);
+				
+				// Visualizando o objeto (verifica o polimorfismo)
+				cp1.visualizar();
+				
+				// Testando o método sacar da Conta Poupança (comportamento da classe Conta)
+				System.out.println(cp1.sacar(1000.00f));
+				cp1.visualizar();
+				
+				// Testando o método depositar da Conta Poupança
+				cp1.depositar(2000.00f);
+				cp1.visualizar();
 		
 		
 		while (true) {
