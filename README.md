@@ -1,3 +1,10 @@
+# 📌 Nome do Projeto
+
+✨ API em Java para gestão de clientes e contas bancárias, simples e
+escalável.
+
+------------------------------------------------------------------------
+
 <br />
 
 <div align="center">
@@ -7,7 +14,12 @@
 
 <br />
 
+------------------------------------------------------------------------
+
 1. Sobre o Repositório
+   
+------------------------------------------------------------------------
+
 <br />
 
 Este repositório contém um Sistema de Conta Bancária, um projeto prático desenvolvido como parte dos exercícios do Bootcamp Java da Generation Brasil.
@@ -16,7 +28,12 @@ O objetivo principal deste projeto é aplicar os conceitos de Programação Orie
 
 <br />
 
+------------------------------------------------------------------------
+
 2. Conteúdo Programático
+
+------------------------------------------------------------------------
+
 <br />
 
 Este projeto aborda a aplicação de vários tópicos do Bootcamp:
@@ -39,7 +56,12 @@ Métodos: Organização das funcionalidades em métodos dentro das classes.
 
 <br />
 
+------------------------------------------------------------------------
+
 3. Requisitos
+   
+------------------------------------------------------------------------
+
 Para compilar e executar o código localmente, você precisa ter instalado:
 
 Java JDK 17+
@@ -48,7 +70,12 @@ Uma IDE como Eclipse ou STS
 
 <br />
 
+------------------------------------------------------------------------
+
 4. Como Executar o Projeto
+
+------------------------------------------------------------------------
+
 <br />
 
 4.1. Importando o Projeto na IDE
