@@ -22,7 +22,7 @@ public class Menu {
 
 		while (true) {
 
-			System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND
+			System.out.println(Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND
 					+ "*****************************************************");
 			System.out.println("                                                     ");
 			System.out.println("                BANCO DO BRAZIL COM Z                ");
@@ -37,6 +37,7 @@ public class Menu {
 			System.out.println("            6 - Sacar                                ");
 			System.out.println("            7 - Depositar                            ");
 			System.out.println("            8 - Transferir valores entre Contas      ");
+			System.out.println("            9 - Procurar pelo Titular da Conta       ");
 			System.out.println("            0 - Sair                                 ");
 			System.out.println("                                                     ");
 			System.out.println("*****************************************************");
@@ -96,17 +97,30 @@ public class Menu {
 				break;
 			case 6:
 				System.out.println(Cores.TEXT_WHITE + "Saque\n\n");
-
+				
+				sacar();
+				
 				keyPress();
 				break;
 			case 7:
 				System.out.println(Cores.TEXT_WHITE + "Depósito\n\n");
 
+				depositar();
+				
 				keyPress();
 				break;
 			case 8:
 				System.out.println(Cores.TEXT_WHITE + "Transferência entre Contas\n\n");
 
+				transferir();
+				
+				keyPress();
+				break;
+			case 9:
+				System.out.println(Cores.TEXT_WHITE + "Procurar pelo Titular da Conta\n\n");
+
+				listarPorTitular();
+				
 				keyPress();
 				break;
 			default:
@@ -196,58 +210,162 @@ public class Menu {
 		}
 	}
 	
+	// Método responsável por atualizar os dados de uma conta existentepelo numero
 	private static void atualizarConta() {
 		System.out.print("Digite o número da conta: ");
 		int numero = leia.nextInt();
 		leia.nextLine();
  
+		// Busca a conta pelo número
 		Conta conta = contaController.buscarNaCollection(numero);
  
+		// Se a conta existir
 		if (conta != null) {
+			
+			// Obtém os dados atuais
 			int agencia = conta.getAgencia();
 			String titular = conta.getTitular();
 			int tipo = conta.getTipo();
 			float saldo = conta.getSaldo();
 			
-			
+			// Atualiza agência (ou mantém valor atual se apertar Enter)
 			System.out.printf("Agência atual: %d\nNova Agência (Pressione ENTER para manter o valor atual): ", agencia);
 			String entrada = leia.nextLine();
+			
+			/**
+			 * Se o usuário não digitou nada (entrada vazia), mantém o valor atual de 'agencia'.
+			 * Caso contrário, converte o valor digitado (String) para número inteiro e 
+			 * atribui à variável 'agencia'.
+			 * 
+			 * Operador Ternário: condição ? ação caso seja verdadeira : ação caso seja falsa
+			 * */
 			agencia = entrada.isEmpty() ? agencia : Integer.parseInt(entrada);
-				
-			System.out.printf("Titular atual: %s\nNovo Títular (Pressione ENTER para manter o nome atual):", titular);
+			
+			// Atualiza o nome do titular (ou mantém valor atual se apertar Enter)
+			System.out.printf("Titular atual: %s\nDigite o novo nome do Títular (Pressione ENTER para manter o nome atual): ", titular);
 			entrada = leia.nextLine();
 			titular = entrada.isEmpty() ? titular : entrada;
 			
- 
+			// Atualiza saldo (ou mantém valor atual se apertar Enter)
 			System.out.printf("Saldo atual: %.2f\nNovo Saldo (Pressione ENTER para manter o valor atual):", saldo);
 			entrada = leia.nextLine();
+			
+			/**
+			 * Se o usuário não digitou nada (entrada vazia), mantém o valor atual de 'agencia'.
+			 * Caso contrário, converte o valor digitado (String) para número Real (float),
+			 * substitui a , pelo . (método replace) e atribui à variável 'saldo'.
+			 * */
 			saldo = entrada.isEmpty() ? saldo : Float.parseFloat(entrada);
 			
-			
+			// Se a conta for do tipo Conta Corrente
 			switch (tipo) {
 			case 1 -> {
+				
+				/**
+				 * Como o objeto 'conta' é do tipo genérico Conta, precisamos convertê-la (casting) 
+				 * para ContaCorrente.
+				 * Isso é necessário porque apenas a classe ContaCorrente possui o atributo 'limite'.
+				 * Após o casting, conseguimos acessar o método getLimite() para obter o limite da conta.
+				 * */
 				float limite = ((ContaCorrente) conta).getLimite();
 				
+				// Atualiza o limite da conta (ou mantém valor atual se apertar Enter)
 				System.out.printf("Limite atual: %.2f\nNovo Limite (Pressione ENTER para manter o valor atual): ", limite);
 				entrada = leia.nextLine();
 				limite = entrada.isEmpty() ? limite : Float.parseFloat(entrada);
-				contaController.atualizar(new ContaCorrente(numero, agencia, tipo, titular, saldo, limite));
+				
+				/**
+				 * Na atualização não utilizamos o método gerarNumero() no atributo 'numero'.
+				 * Isso porque o número da conta já existe e identifica unicamente essa conta.
+				 * 
+				 * Se chamarmos 'gerarNumero()', um novo número seria criado e substituiria o antigo,
+				 * o que impediria a atualização dos dados.
+				 */
+				contaController.atualizar(
+						new ContaCorrente(numero, agencia, tipo, titular, saldo, limite)
+				);
 			}
+			
+			// Se a conta for do tipo Conta Poupança
 			case 2 -> {
+				
+				/**
+				 * Como o objeto 'conta' é do tipo genérico Conta, precisamos convertê-la (casting) 
+				 * para ContaPoupanca.
+				 * Isso é necessário porque apenas a classe ContaPoupanca possui o atributo 'aniversario'.
+				 * Após o casting, conseguimos acessar o método getAniversario() para obter o 
+				 * dia do aniversário da conta.
+				 * */
 				int aniversario = ((ContaPoupanca) conta).getAniversario();
 				
+				// Atualiza o dia do aniversário (ou mantém valor atual se apertar Enter)
 				System.out.printf("Aniversário atual da conta: %d\nNovo Aniversário da conta (Pressione ENTER para manter o valor atual): ", aniversario);
 				entrada = leia.nextLine();
 				aniversario = entrada.isEmpty() ? aniversario : Integer.parseInt(entrada);
-				contaController.atualizar(new ContaPoupanca(numero, agencia, tipo, titular, saldo, aniversario));
+				contaController.atualizar(
+						new ContaPoupanca(numero, agencia, tipo, titular, saldo, aniversario)
+				);
 			}
+			// Se o tipo da conta for inválido
 			default -> System.out.println(Cores.TEXT_RED + "Tipo de conta inválido!" + Cores.TEXT_RESET);
 			}
 			
 		} else {
+			// Caso a conta não exista
 			System.out.printf("\nA conta número %d não foi encontrada!%n", numero);
 		}
  
+	}
+	
+	private static void sacar() {
+		
+		System.out.print("Digite o número da conta: ");
+		int numero = leia.nextInt();
+		leia.nextLine();
+		
+		System.out.print("Digite o valor do saque: ");
+		float valor = leia.nextFloat();
+		leia.nextLine();
+		
+		contaController.sacar(numero, valor);
+		
+	}
+	
+	private static void depositar() {
+		
+		System.out.print("Digite o número da conta: ");
+		int numero = leia.nextInt();
+		leia.nextLine();
+		
+		System.out.print("Digite o valor do depósito: ");
+		int valor = leia.nextInt();
+		leia.nextLine();
+		
+		contaController.depositar(numero, valor);
+	}
+	
+	private static void transferir() {
+		System.out.print("Digite o número da conta de origem: ");
+		int numeroOrigem = leia.nextInt();
+		leia.nextLine();
+		
+		System.out.print("Digite o número da conta de destino: ");
+		int numeroDestino = leia.nextInt();
+		leia.nextLine();
+		
+		System.out.print("Digite o valor do Transferência: ");
+		float valor = leia.nextFloat();
+		leia.nextLine();
+		
+		contaController.transferir(numeroOrigem, numeroDestino, valor);
+	}
+	
+	private static void listarPorTitular() {
+		
+		System.out.print("Digite o nome do titular da conta: ");
+		String titular = leia.nextLine();
+		
+		contaController.listarPorTitular(titular);
 	}
  
 }
